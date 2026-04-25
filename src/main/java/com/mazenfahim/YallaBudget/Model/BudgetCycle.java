@@ -28,13 +28,21 @@ public class BudgetCycle {
         return Id;
     }
 
-    public int CalculateRemainingDays(){
+    public int calculateRemainingDays(){
         return Math.toIntExact(ChronoUnit.DAYS.between(StartDate, EndDate));
     }
 
-    public double CalculateDailyLimit(){
-        double DailyLimit=RemainingBalance/CalculateRemainingDays();
+    public double calculateDailyLimit(){
+        double DailyLimit=RemainingBalance/calculateRemainingDays();
         return DailyLimit > 0 ? DailyLimit : 0;
+    }
+
+    public double getRemainingBalance() {
+        return RemainingBalance;
+    }
+
+    public double getTotal_Allowance() {
+        return Total_Allowance;
     }
 
     public void UpdateRemainingBalance(Double amount){
@@ -46,4 +54,12 @@ public class BudgetCycle {
         UpdateRemainingBalance(expense.getAmount());
     }
 
+    public double getSpending(){
+        return Total_Allowance-RemainingBalance;
+    }
+
+    public double getPercentageSpending(){
+        if (Total_Allowance == 0) return 0;
+        return (getSpending()/Total_Allowance)*100;
+    }
 }
