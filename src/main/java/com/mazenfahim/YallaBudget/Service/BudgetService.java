@@ -12,15 +12,18 @@ public class BudgetService {
     public double recalculateDailyLimit(BudgetCycle Cycle){
        return Cycle.calculateDailyLimit();
     }
-//    public void ApplyRollover(){
+
+    //    public void ApplyRollover(){
 //        //not needed now
 //    }
     public boolean checkThreshold(BudgetCycle Cycle){
         return Cycle.getPercentageSpending()>=80;
     }
+
     public boolean validateAmount(double amount){
         return amount > 0;
     }
+
     public boolean validateDateRange(LocalDate startDate,LocalDate endDate){
         return(startDate.isBefore(endDate));
     }

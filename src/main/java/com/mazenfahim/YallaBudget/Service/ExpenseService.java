@@ -22,17 +22,21 @@ public class ExpenseService {
         else
             return false;
     }
+
     public void addExpense(BudgetCycle Cycle, Expense expense){
         if(!validateExpense(expense.getAmount(),expense.getCategory())) return;
         Cycle.AddExpense(expense);
         expenseManager.saveExpense(expense);
     }
+
     public List<Expense> getExpensesForCycle(int CycleId){
         return expenseManager.getExpensesByCycle(CycleId);
     }
+
     public void editExpense(Expense expense){
         expenseManager.updateExpense(expense);
     }
+
     public void deleteExpense(BudgetCycle cycle,Expense expense){
         cycle.UpdateRemainingBalance(-expense.getAmount());
         expenseManager.deleteExpense(expense);

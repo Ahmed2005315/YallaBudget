@@ -62,4 +62,10 @@ public class BudgetCycle {
         if (Total_Allowance == 0) return 0;
         return (getSpending()/Total_Allowance)*100;
     }
+    public LocalDate getStartDate(){
+        return StartDate;
+    }
+    public LocalDate getEndDate(){
+        return EndDate;
+    }
 }

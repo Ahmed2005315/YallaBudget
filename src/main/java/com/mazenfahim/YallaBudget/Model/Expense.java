@@ -8,12 +8,12 @@ public class Expense {
     private double Amount;
     private LocalDate Timestamp;
     private Category category;
-    private BudgetCycle budgetCycle;
+    private int CycleId;
 
-    public Expense(double amount,Category category,BudgetCycle budgetCycle){
+    public Expense(double amount, Category category, int cycleId){
         this.Amount=amount;
         this.category=category;
-        this.budgetCycle=budgetCycle;
+        this.CycleId=1;
         this.Timestamp=LocalDate.now();
     }
 
@@ -35,5 +35,9 @@ public class Expense {
 
     public double getAmount() {
         return Amount;
+    }
+
+    public void setTimestamp(LocalDate timestamp) {
+        Timestamp = timestamp;
     }
 }

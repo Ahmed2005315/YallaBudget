@@ -20,6 +20,7 @@ public class DashboardService {
     public double getRemainingBalance(BudgetCycle Cycle){
         return Cycle.getRemainingBalance();
     }
+
     public double getDailyLimit(BudgetCycle Cycle){
         return Cycle.calculateDailyLimit();
     }
@@ -27,6 +28,7 @@ public class DashboardService {
     public double getTotalSpending(BudgetCycle Cycle){
         return Cycle.getSpending();
     }
+
     public Map<String,Double> calculateCategoryTotals(int CycleId){
         Map<String,Double> categoryTotals=new HashMap<>();
         List<Expense> expenses = expenseManager.getExpensesByCycle(CycleId);
@@ -40,6 +42,7 @@ public class DashboardService {
     }
 
     public List<ChartData> prepareChartData(int cycleId){
+
         Map<String,Double> categoryTotals=calculateCategoryTotals(cycleId);
         List<ChartData> chartData=new ArrayList<>();
         for(Map.Entry<String,Double> entry:categoryTotals.entrySet()){

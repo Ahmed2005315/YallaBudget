@@ -5,24 +5,18 @@ public class Category {
     private String CategoryName;
     private String Description;
 
-    public void setId(int id) {
-        Id = id;
+    public Category(int id,String name,String Description){
+        this.Id=id;
+        this.CategoryName=name;
+        this.Description=Description;
     }
 
     public int getId() {
         return Id;
     }
 
-    public void setCategoryName(String categoryName) {
-        CategoryName = categoryName;
-    }
-
     public String getCategoryName() {
         return CategoryName;
-    }
-
-    public void setDescription(String description) {
-        Description = description;
     }
 
     public String getDescription() {
